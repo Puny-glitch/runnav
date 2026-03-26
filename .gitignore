@@ -74,3 +74,5 @@ env/
 # --- Supabase local dev ---
 supabase/.branches/
 supabase/.temp/
+.env.local
+.env
