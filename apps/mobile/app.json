@@ -1,0 +1,61 @@
+{
+  "expo": {
+    "name": "RunNav",
+    "slug": "runnav",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0D0D0D"
+    },
+    "scheme": "runnav",
+    "sdkVersion": "51.0.0",
+    "platforms": ["ios", "android"],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.runnav.app",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "RunNav needs your location to track your run and calculate accurate ETAs.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "RunNav needs background location to keep tracking when your screen is off.",
+        "NSMotionUsageDescription": "RunNav uses motion sensors to measure your cadence and stride length."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0D0D0D"
+      },
+      "package": "com.runnav.app",
+      "permissions": [
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACTIVITY_RECOGNITION"
+      ]
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      "expo-sqlite",
+      [
+        "expo-sensors",
+        {
+          "motionPermission": "RunNav uses motion sensors to measure your cadence and stride length."
+        }
+      ],
+      [
+        "@sentry/react-native/expo",
+        {
+          "url": "https://sentry.io/",
+          "project": "runnav",
+          "organization": "runnav"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
